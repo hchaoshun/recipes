@@ -35,3 +35,21 @@ HasPtr &HasPtr::operator=(HasPtr &hp) {
 }
 
 //todo deep copy
+class HasPtr {
+    public:
+        HasPtr(const string &s = string()): str_(new string(s)), i_(0) {}
+        HasPtr(const HasPtr &hp): str_(new string(*hp.str_)), i_(hp.i_) {}
+        HasPtr &operator=(const HasPtr &hp) {
+            string *newp = new string(*hp.str_);
+            delete str_;
+            str_ = newp;
+            i_ = hp.i_
+            return *this;
+        }
+        ~HasPtr() {
+            delete str_;
+        }
+    private:
+        string *str_;
+        size_t i;
+};
