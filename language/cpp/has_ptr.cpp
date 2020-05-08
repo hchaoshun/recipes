@@ -2,7 +2,7 @@
 class HasPtr {
     public:
         HasPtr(const string &s = string()):
-            s_(new string(s)), i_(0), count_(new int(0)) {}
+            s_(new string(s)), i_(0), count_(new int(1)) {}
         HasPtr(const HasPtr &hp) : s_(hp.s_), i_(hp.i_), count_(hp.count_) {
             ++*count_;
         }
