@@ -1,0 +1,3 @@
+[submodule "tool/submodule/knowledge-graph"]
+	path = tool/submodule/knowledge-graph
+	url = https://github.com/hchaoshun/knowledge-graph.git
