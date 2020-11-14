@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++17 -g   CMakeFiles/cppTest.dir/main.cpp.o CMakeFiles/cppTest.dir/AddressBook.pb.cc.o  -o cppTest -rdynamic /usr/local/lib/libprotobuf.a -lpthread 

@@ -1,0 +1,7 @@
+/usr/local/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /tmp/tmp.CPr6O9Win5
+srcs: /tmp/tmp.CPr6O9Win5/cmake-build-debug/AddressBook.pb.cc
+hers: /tmp/tmp.CPr6O9Win5/cmake-build-debug/AddressBook.pb.h
+proto_src_dir: /tmp/tmp.CPr6O9Win5/proto-src
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/tmp.CPr6O9Win5/cmake-build-debug
