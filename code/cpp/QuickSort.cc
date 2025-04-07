@@ -27,4 +27,4 @@ public:
         vec[lo] = pivot;
         return lo;
     }
-}
+};
