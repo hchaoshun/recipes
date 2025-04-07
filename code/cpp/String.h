@@ -4,30 +4,37 @@ public:
         *data_ = '\0';
     }
 
-    String(const char *data): data_(new char[strlen(data)+1]) {
+    String(const char *data): data_(new char[strlen(data) + 1]) {
         strcpy(data_, data);
     }
 
-    String(const String &str): data_(new char[str.size()+1]) {
+    String(const String &str): data_(new char[strlen(str.data_) + 1]) {
         strcpy(data_, str.data_);
     }
 
-    String(String &&str): data_(str.data_) {
+    String(String &&str) noexcept : data_(str.data_) {
         str.data_ = nullptr;
     }
+
     String &operator=(const String &str) {
-        String tmp(str);
-        swap(tmp);
+        if (this != &str) {
+            String tmp(str);
+            swap(tmp);
+        }
         return *this;
     }
 
-    String &operator=(String &&str) {
-        std::swap(str);
+    String &operator=(String &&str) noexcept {
+        if (this != &str) {
+            delete[] data_;
+            data_ = str.data_;
+            str.data_ = nullptr;
+        }
         return *this;
     }
 
-    void swap(const String &str) {
-        swap(*this, str);
+    void swap(String &str) {
+        std::swap(data_, str.data_);
     }
 
     size_t size() const {
@@ -35,7 +42,7 @@ public:
     }
 
     ~String() {
-        delete []data_;
+        delete[] data_;
     }
 
 private:
